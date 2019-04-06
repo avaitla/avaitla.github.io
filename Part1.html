@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+    
+    <!-- JQuery : http://jquery.com/ -->
+    <script type="text/javascript" src="jquery-1.7.min.js"></script>
+
+
+    <!-- FancyBox : http://fancyapps.com/fancybox/ -->
+    <link rel="stylesheet" href="FancyBox/source/jquery.fancybox.css" type="text/css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="FancyBox/source/helpers/jquery.fancybox-buttons.css" />
+
+    <script type="text/javascript" src="FancyBox/source/jquery.fancybox.pack.js"></script>
+    <script type="text/javascript" src="FancyBox/source/helpers/jquery.fancybox-buttons.js"></script>    
+    
+    
+    <!-- JScrollPane : http://jscrollpane.kelvinluck.com/ -->
+    <link type="text/css" href="ScrollPane/jquery.jscrollpane.css" rel="stylesheet" media="all" />
+    
+    <script type="text/javascript" src="ScrollPane/jquery.mousewheel.js"></script>
+    <script type="text/javascript" src="ScrollPane/jquery.jscrollpane.min.js"></script>
+        
+        
+    <!-- Google Maps : http://maps.google.com/ -->
+    <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?key=AIzaSyAK_Khzb0apOrRR2nt0HcbvZRXWFI40y9w
+&sensor=false"></script>    
+
+
+    <!-- Custom Functionality -->
+    <link rel="stylesheet" href="styles.css" type="text/css" />
+    <script type="text/javascript" src="scripts.js"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function()
+        {
+            initialize();
+            $("#exhibit1").click(function(){ $("#exbit1").click(); });
+            $("#exhibit2").click(function(){ $("#exbit2").click(); });
+            $("#exhibit3").click(function(){ $("#exbit3").click(); });
+            $("#exhibit4").click(function(){ $("#exbit4").click(); });
+            $("#exhibit5").click(function(){ $("#exbit5").click(); });
+            $("#exhibit6").click(function(){ $("#exbit6").click(); });
+            $("#exhibit7").click(function(){ $("#exbit7").click(); });
+            $("#exhibit8").click(function(){ $("#exbit8").click(); });
+        });
+    
+    
+    </script>
+</head>
+<body>
+    <div id="map_canvas"></div>	
+    
+    
+    <div id="locations">
+        <div id="locationHeader">
+          <span id="dirHover">Directions</span>
+          <span id="about">Part 1</span>
+          
+          <a style="display:none" class="fancybox" href="#aboutInfo" id="clickAbout"></a>
+          <div style="display: none">
+          <div id="aboutInfo" class="fancybox">
+              <p id="aboutIntro"><span>Welcome</span> Hello There! Welcome to a University of Chicago Architecture Tour. We have a lot of cool stuff on campus, so for the unfamiliar this is a great introduction to the rich architecture of the University. There are three parts, and you will need to go back to the main page (arcengine.com), to choose each one. It's best to follow along by walking it in the real world, but if you aren't from the University you can still take the tour thanks to the power of technology! Just use Google's awesome street view to move through the map! You can hover over markers on the map or on the right hand pane to get more information about the exhibit indicated. In order to see high quality pictures simply click on the marker or the item in the right hand pane. If you want specific directions on how to take the route, simply click on the 'Directions' button in the right hand pane! In addition, a campus map can be found here: maps.uchicago.edu/campus.shtml. Happy Travels!</p>
+              <br/>
+              <p id="aboutCollab"><span>Acknowledgements</span> This little website uses a lot of cool software to work. First and foremost, Google Maps for their awesome Google Maps API (code.google.com/apis/maps/), those guys are really exceptional! This awesome sleek window that you are reading this in, and which I use to display the images uses FancyBox (fancyapps.com/fancybox/), which is powered by none other than the best Javascript Framework in the Wild West, JQuery (jquery.com). Finally, those cool scrollbars on the right hand pane is powered by JScrollPane (jscrollpane.kelvinluck.com). Scrollbars are surprisingly hard to do well, so all kudos to the folks behind that awesome piece of Javascript Goodness. Finally, thanks to Steven and Navi, for some help finding the trickier exhibits!</p>
+            </div>
+          </div>
+      </div>
+    
+      <div id="directionsPanel"></div>
+
+      <div id="list-items" class="scroll-pane">
+
+
+          <a class="tour-li" href="#inline1" id="exhibit1">
+              <div class="tour-thumb"><img src="thumbnails/ionic.jpg" height="50" width="50"/></div>
+	          <div class="tour-title">Exhibit 1</div>
+	          <div class="tour-desc">Ionic Columns</div>
+	      </a>
+	      <div class="tour-li_ no-show" id="exhibit1_">
+	          <div class="tour-info">Of the three columns of classical architecture, Ionic columns have a notable `egg-and-dart` design near the cap. This feature makes them easy to identify.</div>
+	          <div class="tour-loc">This piece is located right at the doorway of the small apartment complex and faces Ellis avenue. The surrounding area has a number of old homes and apartments which also have unique characteristics about them.</div>
+	          <div class="tour-address">5458 S Ellis Ave, Chicago, IL 60615</div>
+	      </div>
+	      <div style="display: none;">
+              <div id="inline1" class="box-content">
+                  <a id="exbit1" class="fancybox-button"         rel="set1" href='images/ionic-rlabs.JPG' title="Ionic Column"></a>
+    	          <a class="fancybox-button"                     rel="set1" href='images/ionic1-rlabs.JPG' title="Apartment Entrance with Ionic Column"></a>
+    	      </div>	      
+          </div>
+
+
+
+
+          <a class="tour-li" href="#inline2" id="exhibit2">
+              <div class="tour-thumb"><img src="thumbnails/cable.jpg" height="50" width="50"/></div>
+	          <div class="tour-title">Exhibit 2</div>
+	          <div class="tour-desc">Cable Construction</div>
+	          <div class="tour-address">5530 South Ellis, Chicago, Illinois 60637</div>
+	      </a>
+	      <div class="no-show" id="exhibit2_">
+	          <div class="tour-info">Cables can be used to offer strong suspension. Designed by Cesar Pelli, the Gerald Ratner Athletics Center has a number of cables which are used for the support of its various features. They can be seen from all directions.</div>
+	          <div class="tour-loc">The Athletics Center is located right at the corner of Ellis and 55th street.</div>
+	      </div>
+	      <div style="display: none;">
+              <div id="inline2" class="box-content">
+                  <a id="exbit2" class="fancybox-button"         rel="set2" href='images/cable-rlabs.JPG' title="Ratner Athletic Center"></a>
+    	          <a class="fancybox-button"         rel="set2" href='images/cable1-rlabs.JPG' title="Center Dome inside of Ratner"></a>
+    	          <a class="fancybox-button"         rel="set2" href='images/cable2-rlabs.JPG' title="Ratner Main Lobby"></a>
+    	      </div>	      
+          </div>
+
+
+
+          <a class="tour-li" href="#inline3" id="exhibit3">
+              <div class="tour-thumb"><img src="thumbnails/dome.jpg" height="50" width="50"/></div>
+	          <div class="tour-title">Exhibit 3</div>
+	          <div class="tour-desc">Dome Construction</div>
+	          <div class="tour-address">1010 East 57th Street, Chicago, Illinois 60637</div>
+	      </a>
+	      <div class="no-show" id="exhibit3_">
+	          <div class="tour-info">The Mansueto Library was commissioned by Joe and Rika Mansueto, and designed by Helmut Jahn. The smooth glass curves forming the domed ceiling directly contrast the brutalist architecture of it's neighbor, the Regenstein Library.</div>
+	          <div class="tour-loc">This Mansueto Library is located right at the corner of Ellis and 57th street.</div>
+	      </div>
+	      <div style="display: none;">
+              <div id="inline3" class="box-content">
+                  <a id="exbit3" class="fancybox-button"         rel="set3" href='images/dome-rlabs.JPG' title="Mansueto Library"></a>
+                  <a class="fancybox-button"         rel="set3" href='images/dome1-rlabs.JPG' title="Mansueto Library next to Regenstein Library"></a>
+    	      </div>	      
+          </div>
+          
+          
+	      
+	      
+	      
+	      <a class="tour-li" href="#inline4" id="exhibit4">
+              <div class="tour-thumb"><img src="thumbnails/pointedarch.jpg" height="50" width="50"/></div>
+	          <div class="tour-title">Exhibit 4</div>
+	          <div class="tour-desc">Pointed Arch</div>
+	          <div class="tour-address">1070 E. 57th Street, Chicago, Illinois 60637</div>
+	      </a>
+	      <div class="no-show" id="exhibit4_">
+	          <div class="tour-info">Marking the entrance to the main quads is this notable vine covered Arch which hundreds of students pass through on their way to classes. It is quite monolithic and the simple details in the construction are often overlooked.</div>
+	          <div class="tour-loc">This can be found directly across from the Regenstein Library on 57th Street. You simply need to walk east a few yards from Mansueto to see the arch.</div>
+	      </div>
+	      <div style="display: none;">
+              <div id="inline4" class="box-content">
+                  <a id="exbit4" class="fancybox-button"         rel="set4" href='images/pointedarch-rlabs.JPG' title="Pointed Arch"></a>
+                  <a class="fancybox-button"         rel="set4" href='images/pointedarch1-rlabs.JPG' title=""></a>
+                  <a class="fancybox-button"         rel="set4" href='images/pointedarch2-rlabs.JPG' title=""></a>
+                  <a class="fancybox-button"         rel="set4" href='images/pointedarch3-rlabs.JPG' title=""></a>
+                  <a class="fancybox-button"         rel="set4" href='images/pointedarch5-rlabs.JPG' title="View of the Quad from the Pointed Arch"></a>
+    	      </div>	      
+          </div>
+
+
+	      <a class="tour-li" href="#inline5" id="exhibit5">
+              <div class="tour-thumb"><img src="thumbnails/trussedroof.jpg" height="50" width="50"/></div>
+	          <div class="tour-title">Exhibit 5</div>
+	          <div class="tour-desc">Trussed Roof Construction</div>
+	          <div class="tour-address">5640 South University Avenue, Chicago, Illinois 60637</div>
+	      </a>
+	      <div class="no-show" id="exhibit5_">
+	          <div class="tour-info">A trussed roof is a roof that consists of triangular units joined at specific nodes. Because of this design, most force is exerted at nodes leading to mostly tensile or compressive forces.</div>
+	          <div class="tour-loc">The Trussed Roof can be seen by going to the second floor and entering the main dining hall.</div>
+	      </div>
+	      <div style="display: none;">
+              <div id="inline5" class="box-content">
+                  <a id="exbit5" class="fancybox-button"         rel="set5" href='images/trussedroof-rlabs.JPG' title="Trussed Roof Construction inside Bartlett"></a>
+                  <a class="fancybox-button"         rel="set5" href='images/trussedroof1-rlabs.JPG' title="Bartlett Exterior"></a>
+                  <a class="fancybox-button"         rel="set5" href='images/trussedroof2-rlabs.JPG' title="Entrance to Bartlett with a Pointed Arch"></a>
+                  <a class="fancybox-button"         rel="set5" href='images/trussedroof3-rlabs.JPG' title="Bartlett Main Hallway with Barrel Vault Roof"></a>
+                  <a class="fancybox-button"         rel="set5" href='images/trussedroof4-rlabs.JPG' title=""></a>
+                  <a class="fancybox-button"         rel="set5" href='images/trussedroof5-rlabs.JPG' title="Mural inside Bartlett"></a>
+                  <a class="fancybox-button"         rel="set5" href='images/trussedroof6-rlabs.JPG' title="Street Entrance to Bartlett"></a>
+    	      </div>
+          </div>
+
+
+
+
+          <a class="tour-li" href="#inline6" id="exhibit6">
+              <div class="tour-thumb"><img src="thumbnails/keystone.jpg" height="50" width="50"/></div>
+	          <div class="tour-title">Exhibit 6</div>
+	          <div class="tour-desc">Keystone</div>
+	          <div class="tour-address">5635 South University Avenue, Chicago, Illinois 60637</div>
+	      </a>
+	      <div class="no-show" id="exhibit6_">
+	          <div class="tour-info">A keystone is a wedge-shaped block which is placed at the peak of an arch or vault. In addition to possibly being decorative, it provides structural support by adding pressure to lock stones in position.</div>
+	          <div class="tour-loc">There is a fairly nice keystone on the entry arch which faces University Avenue.</div>
+	      </div>
+	      <div style="display: none;">
+              <div id="inline6" class="box-content">
+                  <a id="exbit6" class="fancybox-button"         rel="set6" href='images/keystone-rlabs.JPG' title="Keystone"></a>
+                  <a class="fancybox-button"         rel="set6" href='images/keystone2-rlabs.JPG' title="Building with Keystone"></a>
+    	      </div>	      
+          </div>
+
+
+
+          <a class="tour-li" href="#inline7" id="exhibit7">
+              <div class="tour-thumb"><img src="thumbnails/corbel.jpg" height="50" width="50"/></div>
+	          <div class="tour-title">Exhibit 7</div>
+	          <div class="tour-desc">Corbel</div>
+	          <div class="tour-address">1100 East 58th Street, Chicago, Illinois 60637</div>
+	      </a>
+	      <div class="no-show" id="exhibit7_">
+	          <div class="tour-info">A corbel is a piece of masonry which sticks out from the side of a building in order to support additional weight.</div>
+	          <div class="tour-loc">There are large corbels outside of Ryerson and are used to support some exterior structures. You need to be viewing Ryerson from the main quad, and not the street side to see them. Their size makes them quite noticeable.</div>
+	      </div>
+	      <div style="display: none;">
+              <div id="inline7" class="box-content">
+                  <a id="exbit7" class="fancybox-button"         rel="set7" href='images/corbel-rlabs.JPG' title="Corbel outside Ryerson"></a>
+    	          <a class="fancybox-button"         rel="set7" href='images/corbel1-rlabs.JPG' title="Exterior view of Ryerson"></a>
+    	          <a class="fancybox-button"         rel="set7" href='images/corbel3-rlabs.JPG' title="Exterior view of Eckhart (right of Ryerson)"></a>
+    	      </div>	      
+          </div>
+
+
+
+
+
+
+          <a class="tour-li" href="#inline8" id="exhibit8">
+              <div class="tour-thumb"><img src="thumbnails/corinthian.jpg" height="50" width="50"/></div>
+	          <div class="tour-title">Exhibit 8</div>
+	          <div class="tour-desc">Corinthian Column</div>
+	          <div class="tour-address">5728 S. Woodlawn Ave, Chicago, Illinois 60637</div>
+	      </a>
+	      <div class="no-show" id="exhibit8_">
+	          <div class="tour-info">Of the three columns of classical architecture, Corinthian columns are the most ornate. They have elaborate flushes of acanthus leaves and scrolls.</div>
+	          <div class="tour-loc">There are Corinthian columns lining the window of the building and which face Woodlawn Ave.</div>
+	      </div>
+	      <div style="display: none;">
+              <div id="inline8" class="box-content">
+    	          <a id="exbit8" class="fancybox-button"         rel="set8" href='images/corinthian-rlabs.JPG' title="Corinthian Column"></a>
+    	          <a class="fancybox-button"         rel="set8" href='images/corinthian1-rlabs.JPG' title=""></a>
+    	          <a class="fancybox-button"         rel="set8" href='images/corinthian2-rlabs.JPG' title="Building also has Ionic Columns"></a>
+    	      </div>	      
+          </div>
+          
+
+      </div>
+</body>
+</html>

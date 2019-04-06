@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+    
+    <!-- JQuery : http://jquery.com/ -->
+    <script type="text/javascript" src="jquery-1.7.min.js"></script>
+
+
+    <!-- FancyBox : http://fancyapps.com/fancybox/ -->
+    <link rel="stylesheet" href="FancyBox/source/jquery.fancybox.css" type="text/css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="FancyBox/source/helpers/jquery.fancybox-buttons.css" />
+
+    <script type="text/javascript" src="FancyBox/source/jquery.fancybox.pack.js"></script>
+    <script type="text/javascript" src="FancyBox/source/helpers/jquery.fancybox-buttons.js"></script>    
+    
+    
+    <!-- JScrollPane : http://jscrollpane.kelvinluck.com/ -->
+    <link type="text/css" href="ScrollPane/jquery.jscrollpane.css" rel="stylesheet" media="all" />
+    
+    <script type="text/javascript" src="ScrollPane/jquery.mousewheel.js"></script>
+    <script type="text/javascript" src="ScrollPane/jquery.jscrollpane.min.js"></script>
+        
+        
+    <!-- Google Maps : http://maps.google.com/ -->
+    <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?key=AIzaSyAK_Khzb0apOrRR2nt0HcbvZRXWFI40y9w"></script>    
+
+
+    <!-- Custom Functionality -->
+    <link rel="stylesheet" href="styles.css" type="text/css" />
+    <script type="text/javascript" src="scripts.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function()
+        {
+            initialize();
+            $("#exhibit1").click(function(){ $("#exbit1").click(); });
+            $("#exhibit2").click(function(){ $("#exbit2").click(); });
+            $("#exhibit3").click(function(){ $("#exbit3").click(); });
+            $("#exhibit4").click(function(){ $("#exbit4").click(); });
+            $("#exhibit5").click(function(){ $("#exbit5").click(); });
+            $("#exhibit6").click(function(){ $("#exbit6").click(); });
+            $("#exhibit7").click(function(){ $("#exbit7").click(); });
+            $("#exhibit8").click(function(){ $("#exbit8").click(); });
+        });
+    
+    
+    </script>
+</head>
+<body>
+    <div id="map_canvas"></div>	
+    
+    
+    <div id="locations">
+        <div id="locationHeader">
+          <span id="dirHover">Directions</span>
+          <span id="about">Part 2</span>
+          
+          <a style="display:none" class="fancybox" href="#aboutInfo" id="clickAbout"></a>
+          <div style="display: none">
+          <div id="aboutInfo" class="fancybox">
+              <p id="aboutIntro"><span>Welcome</span> Hello There! Welcome to a University of Chicago Architecture Tour. We have a lot of cool stuff on campus, so for the unfamiliar this is a great introduction to the rich architecture of the University. There are three parts, and you will need to go back to the main page (arcengine.com), to choose each one. It's best to follow along by walking it in the real world, but if you aren't from the University you can still take the tour thanks to the power of technology! Just use Google's awesome street view to move through the map! You can hover over markers on the map or on the right hand pane to get more information about the exhibit indicated. In order to see high quality pictures simply click on the marker or the item in the right hand pane. If you want specific directions on how to take the route, simply click on the 'Directions' button in the right hand pane! In addition, a campus map can be found here: maps.uchicago.edu/campus.shtml. Happy Travels!</p>
+              <br/>
+              <p id="aboutCollab"><span>Acknowledgements</span> This little website uses a lot of cool software to work. First and foremost, Google Maps for their awesome Google Maps API (code.google.com/apis/maps/), those guys are really exceptional! This awesome sleek window that you are reading this in, and which I use to display the images uses FancyBox (fancyapps.com/fancybox/), which is powered by none other than the best Javascript Framework in the Wild West, JQuery (jquery.com). Finally, those cool scrollbars on the right hand pane is powered by JScrollPane (jscrollpane.kelvinluck.com). Scrollbars are surprisingly hard to do well, so all kudos to the folks behind that awesome piece of Javascript Goodness. Finally, thanks to Steven and Navi, for some help finding the trickier exhibits!</p>
+            </div>
+          </div>
+      </div>
+    
+      <div id="directionsPanel"></div>
+
+      
+      <div id="list-items" class="scroll-pane">
+
+
+
+
+
+          <a class="tour-li" href="#inline1" id="exhibit1">
+              <div class="tour-thumb"><img src="thumbnails/cantilever.jpg" height="50" width="50"/></div>
+	          <div class="tour-title">Exhibit 1</div>
+	          <div class="tour-desc">Cantilever Construction</div>
+	          <div class="tour-address">5757 S. Woodlawn Ave, Chicago, Illinois 60637</div>
+	      </a>
+	      <div class="no-show" id="exhibit1_">
+	          <div class="tour-info">A cantilever is a beam that overhangs on one end. Careful calculations need to be done in order to verify that the stress from gravity can be counteracted by the anchoring point of the beam. When achieved successfully it produces the nice effect of a free hanging feature.</div>
+	          <div class="tour-loc">This building is Frank Lloyd Wrights famous Robie House demonstrating an architectural style known as `prairie style`. It can be found on the corner of Woodlawn and 58th St.</div>
+	      </div>
+	      <div style="display: none;">
+              <div id="inline1" class="box-content">
+                  <a id="exbit1" class="fancybox-button"         rel="set1" href='images/cantilever-rlabs.JPG' title="View of Robie House with Cantilever"></a>
+    	          <a class="fancybox-button" rel="set1" href='images/cantilever1-rlabs.JPG' title="Alternate view of Robie House"></a>
+    	          <a class="fancybox-button" rel="set1" href='images/cantilever2-rlabs.JPG' title="Full view of Robie House"></a>
+    	      </div>	      
+          </div>
+	      
+	      
+	      
+	      <a class="tour-li" href="#inline2" id="exhibit2">
+              <div class="tour-thumb"><img src="thumbnails/supportingpier.jpg" height="50" width="50"/></div>
+	          <div class="tour-title">Exhibit 2</div>
+	          <div class="tour-desc">Supporting Piers</div>
+	          <div class="tour-address">5807 S. Woodlawn, Chicago, Illinois 60637</div>
+	      </a>
+	      <div class="no-show" id="exhibit2_">
+	          <div class="tour-info">Supporting piers are structures that are used for structural support such as load distribution on various structures from bridges to arches.</div>
+	          <div class="tour-loc">Right next to the Robie House is the Booth School of Business, which has a cantilever entrance as well. However in order to see the immense supporting piers, one needs to walk inside and stand in the main lobby. They are quite enormous, and the view on a sunny day is breathtaking.</div>
+	      </div>
+	      <div style="display: none;">
+              <div id="inline2" class="box-content">
+                  <a id="exbit2" class="fancybox-button"         rel="set2" href='images/supportingpier-rlabs.JPG' title="Supporting Piers inside Booth"></a>
+    	          <a class="fancybox-button" rel="set2" href='images/supportingpier1-rlabs.JPG' title="Entrance to Booth. Note the Cantilever"></a>
+    	          <a class="fancybox-button" rel="set2" href='images/supportingpier2-rlabs.JPG' title="Alternate entrance to Booth"></a>
+    	          <a class="fancybox-button" rel="set2" href='images/supportingpier3-rlabs.JPG' title="View of Booth Main Lobby"></a>
+    	          <a class="fancybox-button" rel="set2" href='images/supportingpier4-rlabs.JPG' title="Alternate view of Supporting Piers"></a>
+    	          <a class="fancybox-button" rel="set2" href='images/supportingpier5-rlabs.JPG' title="Booth Main Lobby"></a>
+    	      </div>	      
+          </div>
+
+
+
+
+
+          <a class="tour-li" href="#inline3" id="exhibit3">
+              <div class="tour-thumb"><img src="thumbnails/mural.jpg" height="50" width="50"/></div>
+	          <div class="tour-title">Exhibit 3</div>
+	          <div class="tour-desc">Wall Mural</div>
+	          <div class="tour-address">1212 E. 59th St., Chicago, Illinois 60637</div>
+	      </a>
+	      <div class="no-show" id="exhibit3_">
+	          <div class="tour-info">Ida Noyes is quite a beautiful building. However, you need to go inside in order to fully appreciate all that it has to offer. The ceilings have exceptional designs and the wooden structures were created with a great deal of care and precision. In addition you may be able to catch a Movie in the Ida Theater when you're there!</div>
+	          <div class="tour-loc">On the top floor of Ida there is a grand lobby which contains a beautiful mural that spans the lengths of both walls. It appears to be some sort of Wedding Procession.</div>
+	      </div>
+	      <div style="display: none;">
+              <div id="inline3" class="box-content">
+                  <a id="exbit3" class="fancybox-button"         rel="set3" href='images/mural-rlabs.JPG' title="Wall Mural inside Ida Noyes"></a>
+    	          <a class="fancybox-button" rel="set3" href='images/mural1-rlabs.JPG' title="Exterior of Ida Noyes"></a>
+    	          <a class="fancybox-button" rel="set3" href='images/mural2-rlabs.JPG' title="Main Floor of Ida Noyes"></a>
+    	          <a class="fancybox-button" rel="set3" href='images/mural3-rlabs.JPG' title="Top Floor of Ida Noyes, and entrance to Mural Room"></a>
+    	          <a class="fancybox-button" rel="set3" href='images/mural4-rlabs.JPG' title="Windows inside of Ida Noyes"></a>
+    	          <a class="fancybox-button" rel="set3" href='images/mural5-rlabs.JPG' title="Another portion of the Mural"></a>
+    	      </div>	      
+          </div>
+
+
+
+
+          <a class="tour-li" href="#inline4" id="exhibit4">
+              <div class="tour-thumb"><img src="thumbnails/wooden.jpg" height="50" width="50"/></div>
+	          <div class="tour-title">Exhibit 4</div>
+	          <div class="tour-desc">Wood Sculpture</div>
+	          <div class="tour-address">5850 S. Woodlawn Ave., Chicago, Illinois 60637</div>
+	      </a>
+	      <div class="no-show" id="exhibit4_">
+	          <div class="tour-info">The Rockefeller Cathedral is a tribute to great architecture. It has a number of stone sculptures, barreled vaults, and monolithic arches.</div>
+	          <div class="tour-loc">Among all this however, if one proceeds to the very center of the Cathedral, you can find three wooden sculptures surrounding the organ.</div>
+	      </div>
+	      <div style="display: none;">
+              <div id="inline4" class="box-content">
+                  <a id="exbit4" class="fancybox-button"         rel="set4" href='images/wooden-rlabs.JPG' title="Wood Sculpture"></a>
+    	          <a class="fancybox-button" rel="set4" href='images/wooden1-rlabs.JPG' title="Exterior of Cathedral"></a>
+    	          <a class="fancybox-button" rel="set4" href='images/wooden2-rlabs.JPG' title="Front of Cathedral"></a>
+    	          <a class="fancybox-button" rel="set4" href='images/wooden3-rlabs.JPG' title="Stone Sculptures on the Top of Cathedral"></a>
+    	          <a class="fancybox-button" rel="set4" href='images/wooden4-rlabs.JPG' title=""></a>
+    	          <a class="fancybox-button" rel="set4" href='images/wooden5-rlabs.JPG' title="Stone Sculpture at Entrance of Cathedral"></a>
+    	          <a class="fancybox-button" rel="set4" href='images/wooden6-rlabs.JPG' title=""></a>
+    	          <a class="fancybox-button" rel="set4" href='images/wooden7-rlabs.JPG' title=""></a>
+    	          <a class="fancybox-button" rel="set4" href='images/wooden8-rlabs.JPG' title="Ceiling of Cathedral"></a>
+    	      </div>	      
+          </div>
+
+
+
+	      <a class="tour-li" href="#inline5" id="exhibit5">
+              <div class="tour-thumb"><img src="thumbnails/barrelvault.jpg" height="50" width="50"/></div>
+	          <div class="tour-title">Exhibit 5</div>
+	          <div class="tour-desc">Barrel Vault</div>
+	          <div class="tour-address">William Rainey Harper Memorial Library (1116 E. 59th St) University of Chicago, Chicago, IL 60637</div>
+	          
+	      </a>
+	      <div class="no-show" id="exhibit5_">
+	          <div class="tour-info">A barrel vault is an architectural feature formed when a single curve is extruded along a given distance.</div>
+	          <div class="tour-loc">There is a barrel vault located at the east tunnel of Harper Memorial (this is next to Swift Hall).</div>
+	      </div>
+	      <div style="display: none;">
+              <div id="inline6" class="box-content">
+                  <a id="exbit5" class="fancybox-button"         rel="set5" href='images/barrelvault-rlabs.JPG' title="Barrel Vault"></a>
+                  <a class="fancybox-button"         rel="set5" href='images/barrelvault1-rlabs.JPG' title="Exterior of Harper Memorial"></a>
+                  <a class="fancybox-button"         rel="set5" href='images/barrelvault2-rlabs.JPG' title=""></a>
+                  <a class="fancybox-button"         rel="set5" href='images/barrelvault3-rlabs.JPG' title=""></a>
+                  <a class="fancybox-button"         rel="set5" href='images/barrelvault4-rlabs.JPG' title="Exterior of Harper from Main Quads"></a>
+
+    	      </div>	      
+          </div>
+
+
+
+
+
+          <a class="tour-li" href="#inline6" id="exhibit6">
+              <div class="tour-thumb"><img src="thumbnails/bronze.jpg" height="50" width="50"/></div>
+	          <div class="tour-title">Exhibit 6</div>
+	          <div class="tour-desc">Bronze Sculpture</div>
+	          <div class="tour-address">William Rainey Harper Memorial Library (1116 E. 59th St) University of Chicago, Chicago, IL 60637</div>
+	      </a>
+	      <div class="no-show" id="exhibit6_">
+	          <div class="tour-info">Carl Linne was the Swedish naturalist who outlined the system of Natural Classification (Homo Sapiens). He is known as the father of modern taxonomy as well as one of the founders of modern ecology.</div>
+	          <div class="tour-loc">There is a significant statue depicting Carl Linne directly outside of the 59th st. entrance to Harper Memorial.</div>
+	      </div>
+	      <div style="display: none;">
+              <div id="inline6" class="box-content">
+                  <a id="exbit6" class="fancybox-button"         rel="set6" href='images/bronze-rlabs.JPG' title=""></a>
+                  <a class="fancybox-button"         rel="set6" href='images/bronze1-rlabs.JPG' title=""></a>
+    	      </div>	      
+          </div>
+	      
+	      
+	      
+	      <a class="tour-li" href="#inline7" id="exhibit7">
+              <div class="tour-thumb"><img src="thumbnails/postlintel.jpg" height="50" width="50"/></div>
+	          <div class="tour-title">Exhibit 7</div>
+	          <div class="tour-desc">Post and Lintel Construction</div>
+	          <div class="tour-address">6031 S. Ellis Ave., Chicago, Illinois 60637</div>
+	      </a>
+	      <div class="no-show" id="exhibit7_">
+	          <div class="tour-info">Post and Lintel Construction is the simple method of using two vertical posts to support a header (lintel).</div>
+	          <div class="tour-loc">This type of construction is used to construct the entry walkway to South Campus Residential Commons.</div>
+	      </div>
+	      <div style="display: none;">
+              <div id="inline7" class="box-content">
+                  <a id="exbit7" class="fancybox-button"         rel="set7" href='images/postlintel-rlabs.JPG' title=""></a>
+                  <a class="fancybox-button"         rel="set7" href='images/postlintel1-rlabs.JPG' title="View of South Campus"></a>
+                  <a class="fancybox-button"         rel="set7" href='images/postlintel2-rlabs.JPG' title="Skating Rink next to South Campus"></a>
+    	      </div>	      
+          </div>
+	      
+	      
+	      
+	      
+
+      </div>
+</body>
+</html>

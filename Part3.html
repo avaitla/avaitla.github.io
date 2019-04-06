@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+    
+    <!-- JQuery : http://jquery.com/ -->
+    <script type="text/javascript" src="jquery-1.7.min.js"></script>
+
+
+    <!-- FancyBox : http://fancyapps.com/fancybox/ -->
+    <link rel="stylesheet" href="FancyBox/source/jquery.fancybox.css" type="text/css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="FancyBox/source/helpers/jquery.fancybox-buttons.css" />
+
+    <script type="text/javascript" src="FancyBox/source/jquery.fancybox.pack.js"></script>
+    <script type="text/javascript" src="FancyBox/source/helpers/jquery.fancybox-buttons.js"></script>    
+    
+    
+    <!-- JScrollPane : http://jscrollpane.kelvinluck.com/ -->
+    <link type="text/css" href="ScrollPane/jquery.jscrollpane.css" rel="stylesheet" media="all" />
+    
+    <script type="text/javascript" src="ScrollPane/jquery.mousewheel.js"></script>
+    <script type="text/javascript" src="ScrollPane/jquery.jscrollpane.min.js"></script>
+        
+        
+    <!-- Google Maps : http://maps.google.com/ -->
+    <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?key=AIzaSyAK_Khzb0apOrRR2nt0HcbvZRXWFI40y9w
+&sensor=false"></script>    
+
+
+    <!-- Custom Functionality -->
+    <link rel="stylesheet" href="styles.css" type="text/css" />
+    <script type="text/javascript" src="scripts.js"></script>
+
+    <script type="text/javascript">
+    $(document).ready(function()
+    {
+        initialize();
+        $("#exhibit1").click(function(){ $("#exbit1").click(); });
+        $("#exhibit2").click(function(){ $("#exbit2").click(); });
+        $("#exhibit3").click(function(){ $("#exbit3").click(); });
+        $("#exhibit4").click(function(){ $("#exbit4").click(); });
+        $("#exhibit5").click(function(){ $("#exbit5").click(); });
+        $("#exhibit6").click(function(){ $("#exbit6").click(); });
+    });
+    </script>
+</head>
+<body>
+    <div id="map_canvas"></div>	
+    
+    
+    <div id="locations">
+        <div id="locationHeader">
+          <span id="dirHover">Directions</span>
+          <span id="about">Part 3</span>
+          
+          <a style="display:none" class="fancybox" href="#aboutInfo" id="clickAbout"></a>
+          <div style="display: none">
+          <div id="aboutInfo" class="fancybox">
+              <p id="aboutIntro"><span>Welcome</span> Hello There! Welcome to a University of Chicago Architecture Tour. We have a lot of cool stuff on campus, so for the unfamiliar this is a great introduction to the rich architecture of the University. There are three parts, and you will need to go back to the main page (arcengine.com), to choose each one. It's best to follow along by walking it in the real world, but if you aren't from the University you can still take the tour thanks to the power of technology! Just use Google's awesome street view to move through the map! You can hover over markers on the map or on the right hand pane to get more information about the exhibit indicated. In order to see high quality pictures simply click on the marker or the item in the right hand pane. If you want specific directions on how to take the route, simply click on the 'Directions' button in the right hand pane! In addition, a campus map can be found here: maps.uchicago.edu/campus.shtml. Happy Travels!</p>
+              <br/>
+              <p id="aboutCollab"><span>Acknowledgements</span> This little website uses a lot of cool software to work. First and foremost, Google Maps for their awesome Google Maps API (code.google.com/apis/maps/), those guys are really exceptional! This awesome sleek window that you are reading this in, and which I use to display the images uses FancyBox (fancyapps.com/fancybox/), which is powered by none other than the best Javascript Framework in the Wild West, JQuery (jquery.com). Finally, those cool scrollbars on the right hand pane is powered by JScrollPane (jscrollpane.kelvinluck.com). Scrollbars are surprisingly hard to do well, so all kudos to the folks behind that awesome piece of Javascript Goodness. Finally, thanks to Steven and Navi, for some help finding the trickier exhibits!</p>
+            </div>
+          </div>
+      </div>
+    
+      <div id="directionsPanel"></div>
+
+      
+      <div id="list-items" class="scroll-pane">
+
+	      
+	      
+	      <a class="tour-li" href="#inline1" id="exhibit1">
+              <div class="tour-thumb"><img src="thumbnails/ibeam.jpg" height="50" width="50"/></div>
+	          <div class="tour-title">Exhibit 1</div>
+	          <div class="tour-desc">I Beam</div>
+	          <div class="tour-address">5811 S. Maryland Ave., Chicago, Illinois 60637</div>
+	      </a>
+	      <div class="no-show" id="exhibit1_">
+	          <div class="tour-info">I beams are metal beams with an `I` shaped cross section. The shape is often used as it is very efficient at handling the various forces involved in support structures.</div>
+	          <div class="tour-loc">Many I beams can be found around the bridges of the University Hospital.</div>
+	      </div>
+	      <div style="display: none;">
+              <div id="inline1" class="box-content">
+                  <a id="exbit1" class="fancybox-button"         rel="set1" href='images/ibeam-rlabs.JPG' title=""></a>
+                  <a class="fancybox-button"         rel="set1" href='images/ibeam1-rlabs.JPG' title="Metal Sculpture near Hospital"></a>
+                  <a class="fancybox-button"         rel="set1" href='images/ibeam2-rlabs.JPG' title=""></a>
+                  <a class="fancybox-button"         rel="set1" href='images/ibeam3-rlabs.JPG' title="University Hospital"></a>
+                  <a class="fancybox-button"         rel="set1" href='images/ibeam4-rlabs.JPG' title="University Hospital"></a>
+
+    	      </div>	      
+          </div>
+
+
+
+
+
+
+
+
+          <a class="tour-li" href="#inline2" id="exhibit2">
+              <div class="tour-thumb"><img src="thumbnails/metal.jpg" height="50" width="50"/></div>
+	          <div class="tour-title">Exhibit 2</div>
+	          <div class="tour-desc">Metal Sculpture</div>
+	          <div class="tour-address">920 East 58th St., Chicago, Illinois 60637</div>
+	      </a>
+	      <div class="no-show" id="exhibit2_">
+	          <div class="tour-loc">This metal piece is located directly outside the Life Sciences Building near the street entrance.</div>
+	      </div>
+	      <div style="display: none;">
+              <div id="inline2" class="box-content">
+                  <a id="exbit2" class="fancybox-button"         rel="set2" href='images/metal-rlabs.JPG' title=""></a>
+                  <a class="fancybox-button"         rel="set2" href='images/metal1-rlabs.JPG' title="Life Sciences Building"></a>
+                  <a class="fancybox-button"         rel="set2" href='images/metal2-rlabs.JPG' title=""></a>
+    	      </div>	      
+          </div>
+
+
+
+
+          <a class="tour-li" href="#inline3" id="exhibit3">
+              <div class="tour-thumb"><img src="thumbnails/archconstruction.jpg" height="50" width="50"/></div>
+	          <div class="tour-title">Exhibit 3</div>
+	          <div class="tour-desc">Arch Construction</div>
+	          <div class="tour-address">John Crerar Library, Chicago, IL 60637</div>
+	      </a>
+	      <div class="no-show" id="exhibit3_">
+	          <div class="tour-info">There is quite a notable arch located outside the John Crerar Library. The library is houses many resources on science and science related disciplines. The listed address is 5730 South Ellis Ave.</div>
+	      </div>
+	      <div style="display: none;">
+              <div id="inline3" class="box-content">
+                  <a id="exbit3" class="fancybox-button"         rel="set3" href='images/archconstruction-rlabs.JPG' title=""></a>
+    	      </div>	      
+          </div>
+
+
+
+          <a class="tour-li" href="#inline4" id="exhibit4">
+              <div class="tour-thumb"><img src="thumbnails/pilaster.jpg" height="50" width="50"/></div>
+	          <div class="tour-title">Exhibit 4</div>
+	          <div class="tour-desc">Pilaster</div>
+	          <div class="tour-address">John Crerar Library, Chicago, Illinois 60637</div>
+	      </a>
+	      <div class="no-show" id="exhibit4_">
+	          <div class="tour-info">Pilasters are columns which project slightly from a building and are solely decorative. There often frame doorways or windows.</div>
+	          <div class="tour-loc">A clear example of a Pilaster can be found outside this building. The doorway faces the John Crerar Library, not 58th street. The listed address is 956 E. 58th St.</div>
+	      </div>
+	      <div style="display: none;">
+              <div id="inline4" class="box-content">
+                  <a id="exbit4" class="fancybox-button"         rel="set4" href='images/pilaster-rlabs.JPG' title=""></a>
+                  <a class="fancybox-button"         rel="set4" href='images/pilaster1-rlabs.JPG' title="Otherside of Building with Ionic Columns"></a>
+    	      </div>	      
+          </div>
+
+
+
+
+
+
+
+
+
+          <a class="tour-li" href="#inline5" id="exhibit5">
+              <div class="tour-thumb"><img src="thumbnails/roundarch.jpg" height="50" width="50"/></div>
+	          <div class="tour-title">Exhibit 5</div>
+	          <div class="tour-desc">Round Arch</div>
+	          <div class="tour-address">970 East 58th St., Chicago, IL 60637</div>
+	      </a>
+	      <div class="no-show" id="exhibit5_">
+	          <div class="tour-info">The University Bookstore is a great piece of architecture which exhibits three round arches right at its entrance.</div>
+	      </div>
+	      <div style="display: none;">
+              <div id="inline5" class="box-content">
+                  <a id="exbit5" class="fancybox-button"         rel="set5" href='images/roundarch-rlabs.JPG' title=""></a>
+                  <a class="fancybox-button"         rel="set5" href='images/roundarch1-rlabs.JPG' title=""></a>
+                  <a class="fancybox-button"         rel="set5" href='images/roundarch2-rlabs.JPG' title=""></a>
+    	      </div>	      
+          </div>
+          
+          
+          	      
+	      
+          <a class="tour-li" href="#inline6" id="exhibit6">
+              <div class="tour-thumb"><img src="thumbnails/ribbedarch.jpg" height="50" width="50"/></div>
+	          <div class="tour-title">Exhibit 6</div>
+	          <div class="tour-desc">Ribbed Arch</div>
+	          <div class="tour-address">Bond Chapel University of Chicago, Chicago, IL 60637</div>
+	      </a>
+	      <div class="no-show" id="exhibit6_">
+	          <div class="tour-info">Ribbed arches differ from traditional arches, as they have vertical segments going between them. This is feature seen in many Gothic Architecture.</div>
+	          <div class="tour-loc">The final item on the tour is Bond Chapel. The stained glass shows clear examples of a ribbed arch. Although not as large as Rockefeller, Bond Chapel is more isolated and its small size makes it feel more peaceful. The listed address is </div>
+	      </div>
+	      <div style="display: none;">
+              <div id="inline6" class="box-content">
+                  <a id="exbit6" class="fancybox-button"         rel="set6" href='images/ribbedarch-rlabs.JPG' title=""></a>
+                  <a class="fancybox-button"         rel="set6" href='images/ribbedarch1-rlabs.JPG' title=""></a>
+                  <a class="fancybox-button"         rel="set6" href='images/ribbedarch2-rlabs.JPG' title=""></a>
+                  <a class="fancybox-button"         rel="set6" href='images/ribbedarch3-rlabs.JPG' title=""></a>
+                  <a class="fancybox-button"         rel="set6" href='images/ribbedarch4-rlabs.JPG' title=""></a>
+
+
+    	      </div>	      
+          </div>
+	      
+	      
+
+      </div>
+</body>
+</html>

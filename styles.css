@@ -1,0 +1,233 @@
+html
+{
+    height: 100%;
+}
+
+body
+{
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: Verdana;
+    font-size: 12px;
+}
+
+#map_canvas
+{
+    height: 100%
+}
+
+.scroll-pane
+{
+	overflow: auto;
+}
+
+.warnbox-content
+{
+  color: black;
+}
+
+#map_canvas
+{
+    margin-right: 290px;
+    height:100%;
+}
+
+#locations #locationHeader
+{
+    margin-bottom: 8px;    
+}
+
+#locations #locationHeader #dirHover
+{
+    cursor : pointer;
+    position:absolute;
+    font-style:italic;
+    font-size: 12px;
+    color: white;
+    font-family: "Lucida Sans Unicode", Tahoma;
+}
+
+
+#locations #locationHeader #about
+{
+    position:absolute;
+    right:15px;
+    font-size: 12px;
+    font-style: italic;
+    cursor: pointer;
+    color: white;
+    font-family: "Lucida Sans Unicode", Tahoma;
+}
+
+#locations
+{
+    position:absolute;
+    top: 0px;
+    width: 290px;
+    right: 0px;
+    height: 100%;
+    background-image:url('grey4.jpg');
+    background-repeat:repeat;
+}
+
+#locations #directionsPanel
+{
+    display: none;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    max-height: 95%;
+    width: 290px;
+    color: #C9C9C9;
+}
+
+
+#locationHeader
+{
+    padding:10px;
+    font-size: 16px;
+    font-family: 'Lucida Sans Unicode';
+    border-bottom: 2px solid #9E9D9D;
+    color: #C9C9C9;
+    background: gray;
+    position:relative; 
+    height: 20px;
+}
+
+#locations #list-items .tour-li
+{
+    background-color: transparent;
+    display: block;
+    width: 250px;
+    text-decoration: none;
+    margin-left: 5px;
+    margin-right: 35px;
+    margin-bottom: 10px;
+    position: relative;
+    height: 58px;
+    overflow: hidden;
+}
+
+#locations #list-items .tour-thumb
+{
+    height: 50px;
+    width: 50px;
+    position: absolute;
+    left: 5px;
+    top: 4px;
+    font-family: 'Lucida Sans Unicode', Tahoma;
+}
+
+#locations #list-items .tour-title
+{
+    position: absolute;
+    left: 58px; top: 4px;
+    padding-right: 6px;
+    font-size: 13px;
+    width: 190px;
+    text-align: center;
+    max-height: 50px;
+    font-family: 'Lucida Sans Unicode', Tahoma;
+}
+
+#aboutInfo
+{
+    width: 600px;
+    
+}
+
+#aboutInfo p
+{
+    text-align: justify;
+}
+
+#aboutInfo a
+{
+    color: gray;
+}
+
+#aboutInfo a:hover
+{
+    color: black;
+}
+
+#aboutInfo span
+{
+    font-weight: bold;
+    font-size: 13px;
+    padding-right: 10px;
+    
+}
+
+.infoMark
+{
+    max-width: 400px;
+    position: relative;
+}
+
+.infoMark .tour-thumb
+{
+    position: absolute;
+}
+
+.infoMark .tour-title
+{
+    font-weight: bold;
+    color: #7d7d7d;
+    position: absolute;
+    left: 60px;
+}
+
+.infoMark .tour-desc
+{
+    color: gray;
+    position:absolute;
+    left: 75px;
+    font-style:italic;
+    top: 25px;
+    color: #7d7d7d;
+}
+
+.infoMark .tour-info
+{
+    padding-top: 60px;
+    color: #7D7D7D;   
+}
+
+.infoMark .tour-loc
+{
+    color: #7d7d7d;
+    padding-top: 10px;
+}
+
+.infoMark .start_addr
+{
+    color: black;
+    text-align: center;
+    font-style: italic;
+}
+
+.tour-address
+{
+    display: none;
+    
+}
+.tour-li
+{
+    color: #C9C9C9;
+}
+
+#locations #list-items .tour-desc
+{
+    position: absolute;
+    left: 58px; top: 28px;
+    width: 190px;
+    text-align: center;
+    font-size: 12px;
+    font-family: 'Lucida Sans Unicode', Tahoma;
+}
+
+.no-show
+{
+    display:none;
+}
